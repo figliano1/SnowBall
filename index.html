@@ -15,8 +15,8 @@
             margin: 0;
             overflow: hidden;
             font-family: 'Press Start 2P', cursive;
-            touch-action: none; /* 禁止浏览器默认的触摸行为，如滑动刷新 */
-            -webkit-user-select: none; /* 禁止选中文本 */
+            touch-action: none; 
+            -webkit-user-select: none;
             user-select: none;
         }
         canvas {
@@ -24,8 +24,14 @@
             display: block;
             margin: auto;
             max-width: 100vw;
-            max-height: 100vh;
+            /* 在移动端限制高度，确保下方有空间放手柄 */
+            max-height: 65vh; 
             box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        @media (min-width: 640px) {
+            canvas {
+                max-height: 100vh;
+            }
         }
     </style>
 <script type="importmap">
